@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Pushy</title>
+    <link rel="icon" type="image/png" href="tiles/pushygreen.png" />
+    <link rel="manifest" href="meta/manifest.webmanifest">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta property="og:url" content="/pushy">
+    <meta property="og:type" content="game"/>
+    <meta property="title" content="Pushy"/>
+    <meta property="og:title" content="Pushy"/>
+    <meta name="twitter:site" content="Pushy">
+    <meta name="twitter:title" content="Pushy">
+    <meta name="description" content="Der kleine grüne Ball mit den Augen heißt Pushy. Pushy will in sein Haus. Du kannst ihn mit den Pfeiltasten auf deiner Tastatur bewegen.">
+    <meta property="description" content="Der kleine grüne Ball mit den Augen heißt Pushy. Pushy will in sein Haus. Du kannst ihn mit den Pfeiltasten auf deiner Tastatur bewegen.">
+    <meta property="og:description" content="Der kleine grüne Ball mit den Augen heißt Pushy. Pushy will in sein Haus. Du kannst ihn mit den Pfeiltasten auf deiner Tastatur bewegen.">
+    <meta name="twitter:description" content="Der kleine grüne Ball mit den Augen heißt Pushy. Pushy will in sein Haus. Du kannst ihn mit den Pfeiltasten auf deiner Tastatur bewegen.">
+    <meta property="image" content="meta/pushy512.png"/>
+    <meta property="og:image" content="meta/pushy512.png"/>
+    <meta name="twitter:image:src" content="meta/pushy512.png">
+    <meta property="og:image:alt" content="Pushy, der kleine grüne Ball" />
+    <meta name="keywords" content="Pushy, Puzzle, JavaScript, Warze, Port, Remake, Lernwerkstatt 7, Lernwerkstatt 8, Lernwerkstatt 9, Lernwerkstatt 10, Lernwerkstatt, Pushy Island, Pushy Bros, Pushy Castle">
+    <meta name="robots" content="index,follow"/>
+    <meta name="language" content="English">
+    <meta name="theme-color" content="#00FF00">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="editorContainer" style="display:none"></div>
+    <div id="levelContainer"></div>
+    <div id="winContainer" style="display: none;">
+        <h2 class="green">SUPER!</h2>
+        <h2>Du hast Level</h2>
+        <h1 class="green" id="levelID">1</h1>
+        <h2>gelöst.</h2>
+        <button id="ok" onclick="nextLevel()">OK</button>
+    </div>
+    <div id="levelControls">
+        <svg class="levelArrow" onclick="previousLevel()" width="50" height="45">
+            <path d="M0,22.5 50,0 50,45 0,22.5" stroke="black" fill="#FFF2"></path>
+        </svg>
+        <h2 id="levelTitle" onclick="goToLevel()">Level <span id="levelTitleNumber">1</span></h2>
+        <svg class="levelArrow" onclick="nextLevel()" width="50" height="45">
+            <path d="M50,22.5 0,0 0,45 50,22.5" stroke="black" fill="#FFF2"></path>
+        </svg>
+    </div>
+    <div id="mobileControls">
+        <div class="row">
+            <button onmousedown="mobileMove('ArrowUp')">
+                <svg width="60" height="60" viewbox="0 0 4 4">
+                    <path d="M2,0 4,2 3,2 3,4 1,4 1,2 0,2 2,0" fill="#0004"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="row">
+            <button onmousedown="mobileMove('ArrowLeft')">
+                <svg width="60" height="60" viewbox="0 0 4 4">
+                    <path d="M2,0 0,2 2,4 2,3 4,3 4,1 2,1 2,0" fill="#0004"></path>
+                </svg>
+            </button>
+            <button onmousedown="mobileMove('ArrowDown')">
+                <svg width="60" height="60" viewbox="0 0 4 4">
+                    <path d="M2,4 4,2 3,2 3,0 1,0 1,2 0,2 2,4" fill="#0004"></path>
+                </svg>
+            </button>
+            <button onmousedown="mobileMove('ArrowRight')">
+                <svg width="60" height="60" viewbox="0 0 4 4">
+                    <path d="M2,0 4,2 2,4 2,3 0,3 0,1 2,1 2,0" fill="#0004"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="tile.js"></script>
+    <script src="editor.js"></script>
+    <script src="audio.js"></script>
+    <script src="levels.js"></script>
+    <script src="level.js"></script>
+    <script src="pushy.js"></script>
+    <script src="main.js"></script>
+</html>
