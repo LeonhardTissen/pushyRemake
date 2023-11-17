@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackObfuscator = require('webpack-obfuscator');
 
 module.exports = (_env, argv) => ({
-	entry: './src/main.js',
+	entry: './src/main.ts',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: '[name].[contenthash].js',
